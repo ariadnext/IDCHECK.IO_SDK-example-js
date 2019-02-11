@@ -1,28 +1,40 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
+import React, {Component} from 'react';
+import axios from 'axios';
 import './App.css';
 
 class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
-  }
+    constructor(props) {
+        super(props);
+        this.state = {link: null, error: null};
+    }
+
+    componentDidMount() {
+        axios.get('/start').then(({data}) => {
+            this.setState({link: data});
+        }).catch((error) => {
+            this.setState({error: error});
+        });
+    }
+
+    render() {
+        return (
+            <div className="App">
+                {this.state.error && <div style={{color: 'red'}}>
+                    <p>Cannot create link.</p>
+                </div>}
+                {this.state.link && this.state.link.email && <div>
+                    The link has been sent by mail.
+                </div>}
+                {this.state.link && !this.state.link.email && <iframe
+                    title="sdk-web"
+                    src={this.state.link.url}
+                    sandbox="allow-scripts allow-same-origin  allow-top-navigation allow-modals allow-popups"
+                    allow="camera *; microphone* ;"
+                    style={{width: '100%', height: '100vh', border: 'none'}}
+                />}
+            </div>
+        );
+    }
 }
 
 export default App;
