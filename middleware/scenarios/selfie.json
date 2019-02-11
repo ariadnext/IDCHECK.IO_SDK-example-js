@@ -1,0 +1,30 @@
+{
+  "interfaceSettings": {
+    "language": "FR",
+    "wording": {
+      "authentInputMsg": "!!Identifiant!!",
+      "linkEmailSignature": "<i>test Sig</i><br><b>Toto</b>"
+    }
+  },
+  "documentsToCapture": [
+    {
+      "code": "DOC1",
+      "docTypes": [
+        "ID",
+        "P"
+      ],
+      "label": "ID"
+    },
+    {
+      "code": "DOC2",
+      "docTypes": [
+        "SELFIE"
+      ],
+      "label": "Selfie"
+    }
+  ],
+  "redirectionData": {
+    "errorRedirectUrl": "https://giphy.com/gifs/glitch-alphabet-font-3osxY9kuM2NGUfvThe/fullscreen",
+    "successRedirectUrl": "https://giphy.com/gifs/arg-thank-you-cat-3oz8xIsloV7zOmt81G/fullscreen"
+  }
+}
