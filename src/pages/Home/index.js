@@ -1,15 +1,18 @@
 import React, {Component} from 'react';
 import axios from 'axios';
-import './App.css';
+import MailImage from './mailbox.svg';
+import AlertImage from './alert.svg';
+import './style.css';
 
-class App extends Component {
+class Home extends Component {
+
     constructor(props) {
         super(props);
         this.state = {link: null, error: null};
     }
 
     componentDidMount() {
-        axios.get('/start').then(({data}) => {
+        axios.get('/api/start').then(({data}) => {
             this.setState({link: data});
         }).catch((error) => {
             this.setState({error: error});
@@ -18,13 +21,19 @@ class App extends Component {
 
     render() {
         return (
-            <div className="App">
-                {this.state.error && <div style={{color: 'red'}}>
+            <div className="home-container">
+                {this.state.error &&
+                <div className="state-error">
+                    <img src={AlertImage} alt="Error" />
                     <p>Cannot create link.</p>
-                </div>}
-                {this.state.link && this.state.link.email && <div>
-                    The link has been sent by mail.
-                </div>}
+                </div>
+                }
+                {this.state.link && this.state.link.email &&
+                <div className="state-mailbox">
+                    <img src={MailImage} alt="mailbox"/>
+                    <p>The link has been sent by mail.</p>
+                </div>
+                }
                 {this.state.link && !this.state.link.email && <iframe
                     title="sdk-web"
                     src={this.state.link.url}
@@ -35,6 +44,7 @@ class App extends Component {
             </div>
         );
     }
+
 }
 
-export default App;
+export default Home;
