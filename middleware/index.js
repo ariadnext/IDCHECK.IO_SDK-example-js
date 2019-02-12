@@ -1,9 +1,5 @@
-const fs = require('fs');
-const path = require('path');
 const ApiClient = require('./api');
-
-const configurationFolder = 'middleware/configuration';
-const scenariosFolder = 'middleware/scenarios';
+const {getConfiguration, getScenario} = require('./files');
 
 const {
     SDKWEB_URL: sdkWebUrl,
@@ -22,23 +18,6 @@ const {
 
 const client = new ApiClient(sdkWebUrl, keycloakUrl, cisUrl);
 
-function loadConfigurations() {
-    const files = fs.readdirSync(path.resolve(configurationFolder));
-    return files.map(file => {
-        const content = fs.readFileSync(path.resolve(`${configurationFolder}/${file}`));
-        return JSON.parse(content.toString());
-    });
-}
-
-function getScenario(code) {
-    try {
-        const file = fs.readFileSync(path.resolve(`${scenariosFolder}/${code}.json`));
-        return JSON.parse(file);
-    }catch(error){
-        throw `Cannot find scenario ${code}.`;
-    }
-}
-
 module.exports = {
 
     init: async () => {
@@ -46,17 +25,12 @@ module.exports = {
         await client.login(username, password, realm);
         try {
             await client.getConfiguration(confCode);
-        }catch(error){
+        } catch (error) {
             if (error.response && error.response.status && error.response.status === 404) {
-                const configurations = loadConfigurations();
-                const configuration = configurations.find(c => c.code === confCode);
-                if (configuration) {
-                    console.log(`creating configuration ${confCode}...`);
-                    await client.createConfiguration(configuration);
-                }else{
-                    throw `Cannot find configuration with code '${confCode}' in directory ${configurationFolder}.`;
-                }
-            }else{
+                const configuration = getConfiguration(confCode);
+                console.log(`creating configuration ${confCode}...`);
+                await client.createConfiguration(configuration);
+            } else {
                 throw error;
             }
         }
@@ -66,7 +40,7 @@ module.exports = {
         await client.login(username, password, realm);
         const scenario = getScenario(scenarioCode);
         const fileUid = `GithubDemo-${new Date().getTime()}`;
-        const { data } = await client.sendLink(scenario, {
+        const {data} = await client.sendLink(scenario, {
             confCode,
             cisRealm: realm,
             fileUid,
@@ -75,12 +49,12 @@ module.exports = {
             errorRedirectUrl,
             successRedirectUrl,
         });
-        return { ...data, fileUid, email: !!contactEmail };
+        return {...data, fileUid, email: !!contactEmail};
     },
 
     getResults: async (fileUid) => {
         await client.login(username, password, realm);
-        const { data: reportData } = await client.getResults(realm, fileUid);
+        const {data: reportData} = await client.getResults(realm, fileUid);
         const documents = await Promise.all(reportData.documents.map(doc => {
             return client.getDocument(realm, doc.uid);
         }));
@@ -92,7 +66,7 @@ module.exports = {
 
     getImage: async (documentUid, imageUid) => {
         await client.login(username, password, realm);
-        const { data } = await client.getImage(realm, documentUid, imageUid);
+        const {data} = await client.getImage(realm, documentUid, imageUid);
         return Buffer.from(data, 'binary');
     }
 
