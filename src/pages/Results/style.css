@@ -1,0 +1,27 @@
+.results-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 1em 2em;
+}
+
+.results-container .check-report-container {
+    flex-basis: 40%;
+    min-width: 300px;
+}
+
+.results-container .results-documents-container {
+    flex-basis: 60%;
+}
+
+.results-container .results-documents-container > div {
+    display: flex;
+    flex-direction: row;
+}
+
+.results-container .results-thumbnails {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-width: 30%;
+}

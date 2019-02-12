@@ -1,0 +1,8 @@
+.check-report-toolbar {
+    float: right;
+    margin-right: 1em;
+}
+
+.check-report-item > p {
+    margin: 0.5em 0em;
+}

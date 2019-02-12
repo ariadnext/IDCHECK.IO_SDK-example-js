@@ -1,0 +1,29 @@
+.results-document {
+    padding-left: 2.5em;
+}
+
+.results-document .results-person {
+    margin: 2em 0em;
+}
+
+.results-document p > label {
+    margin-right: 10px;
+}
+
+.results-document .document-property {
+    display: flex;
+    flex-direction: row;
+}
+
+.results-document .document-property {
+    margin: 0.5em 0em;
+}
+
+.results-document .document-property > label {
+    flex-basis: 50%;
+    font-weight: bold;
+}
+
+.results-document .document-property > span {
+    max-width: 50%;
+}
