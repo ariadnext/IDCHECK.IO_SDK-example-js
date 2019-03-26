@@ -38,7 +38,7 @@ class Home extends Component {
                     title="sdk-web"
                     src={this.state.link.url}
                     sandbox="allow-scripts allow-same-origin  allow-top-navigation allow-modals allow-popups"
-                    allow="camera *; microphone* ;"
+                    allow="camera *; microphone *;"
                     style={{width: '100%', height: '100vh', border: 'none'}}
                 />}
             </div>
