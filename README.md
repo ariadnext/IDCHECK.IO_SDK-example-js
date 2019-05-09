@@ -2,7 +2,19 @@
 
 ![image](https://www.ariadnext.com/wp-content/uploads/2019/01/idcheck.io-rvb.png)
 
-This project is an example of an integration of the [idcheckio sdkweb](https://www.idcheck.io/) in a React App to easily integrate a document capture and identification solution in your user acquisition path.
+AriadNEXT IDCHECK.IO SDK Web enables you to easily integrate a document capture and
+identity verification workflow into your user onboarding or verification process, thanks to an
+API and a responsive web app.
+
+This project is an example of an integration of the [idcheckio sdkweb](https://www.idcheck.io/) in a React App to easily integrate a document capture and identification solution in your user acquisition path. 
+
+## Prerequisites
+
+Before started, please make sure you have been in contact with the [AriadNEXT team](contact+sdkwebexample@idcheck.io) and they provide you **credentails to the Demo platform**.
+
+Technically you will need :
+
+- [NodeJS > v10.15](https://nodejs.org/en/download/)
 
 ## Getting started
 
@@ -11,16 +23,18 @@ This project is an example of an integration of the [idcheckio sdkweb](https://w
 3. With [npm](https://npmjs.org/) installed, run the following command to start the app in the development mode : ```npm start```
 4. Open [https://localhost:3000](https://localhost:3000) to view it in the browser.
 
-## SDK-WEB configuration
+## SDKWEB configuration
 
-By default, when you run the app for the first time, it will create a basic configuration with the code `githubDemo-Default`.
+SDKWeb configuration is a set of parameters to customize the web application your customers will use to capture their documents by branding it to your logo, colors and wordings and set up the technical options (callback url for example).
+
+By default, when you run the app for the first time, it will create a basic configuration with the code `githubDemo-Default` and add it to your account.
 
 If you want to run the app with a custom SDKWEB configuration, you will have to add a new JSON file in the directory `middleware/configuration` and override the variable `CONFCODE` in your `.env.local` file with the code that has been provided in the new JSON file.
 The new JSON configuration will be automatically pushed to the SDKWEB API when the app will start.
 
 For more information, see the [idcheckio sdk-web documentation](https://sdkweb-test.idcheck.io/rest/api/index.html#_customerconf).
 
-## Scenario
+## Onboarding scenario
 
 By default, the app will create onboarding links that will ask the user to provide an ID document (ID card, passport), then do a liveness check.
 
@@ -29,6 +43,8 @@ If you want to create a new onboarding scenario, you will have to create a JSON 
 For more information, see the [idcheckio sdk-web documentation](https://sdkweb-test.idcheck.io/rest/api/index.html#_onboardingdefinition).
 
 ## Email configuration
+
+By default, the app will start the SDKWeb onboarding into an iframe.
 
 If you provide an email address as the value of the variable `CONTACT_EMAIL` in your `.env.local` file, an email will be sent to the provided email address containing the onboarding link.
 
@@ -49,73 +65,13 @@ These values can be override in the `.env.local` file.
 |ERROR_REDIRECT_URL| the user will be redirected to this url when an error occurs during the sdk-web scenario |false|
 |SUCCESS_REDIRECT_URL| the user will be redirected to this url at the end of the sdk-web scenario |false|
 
-## Available Scripts
+## Integration
 
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.<br>
-Open [https://localhost:3000](https://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+For futher integration support please refer to :
+    - [idcheckio sdk-web documentation](https://sdkweb-test.idcheck.io/rest/api/index.html)
+    - integration guide provided by your AriadNEXT contact.
+    - our support email below
 
 ## Support
 
-Please contact [AriadNEXT support team](https://support.ariadnext.com/hc/en-us) if you encounter any issue with your idcheckio sdk-web integration.
+Please contact [AriadNEXT IDCHECKIO support team](contact+sdkwebexample@idcheck.io) if you encounter any issue with your idcheckio sdk-web integration.
