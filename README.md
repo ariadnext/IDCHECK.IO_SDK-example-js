@@ -107,7 +107,7 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 
 ## Troubleshooting
 
-**Note: "an ancestor violates the following Content Security Policy directive"
+- **"an ancestor violates the following Content Security Policy directive"**
 
   We are limiting iframe integration to <https://localhost:3000>.
   To allow your domain please make a request to support Team.
