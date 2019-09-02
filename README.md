@@ -2,7 +2,19 @@
 
 ![image](https://www.ariadnext.com/wp-content/uploads/2019/01/idcheck.io-rvb.png)
 
-This project is an example of an integration of the [idcheckio sdkweb](https://www.idcheck.io/) in a React App to easily integrate a document capture and identification solution in your user acquisition path.
+AriadNEXT IDCHECK.IO SDK Web enables you to easily integrate a document capture and
+identity verification workflow into your user onboarding or verification process, thanks to an
+API and a responsive web app.
+
+This project is an example of an integration of the [idcheckio sdkweb](https://www.idcheck.io/) in a React App to easily integrate a document capture and identification solution in your user acquisition path. 
+
+## Prerequisites
+
+Before started, please make sure you have been in contact with the [AriadNEXT team](contact+sdkwebexample@idcheck.io) and they provide you **credentails to the Demo platform**.
+
+Technically you will need :
+
+- [NodeJS > v10.15](https://nodejs.org/en/download/)
 
 ## Getting started
 
@@ -11,16 +23,18 @@ This project is an example of an integration of the [idcheckio sdkweb](https://w
 3. With [npm](https://npmjs.org/) installed, run the following command to start the app in the development mode : ```npm start```
 4. Open [https://localhost:3000](https://localhost:3000) to view it in the browser.
 
-## SDK-WEB configuration
+## SDKWEB configuration
 
-By default, when you run the app for the first time, it will create a basic configuration with the code `githubDemo-Default`.
+SDKWeb configuration is a set of parameters to customize the web application your customers will use to capture their documents by branding it to your logo, colors and wordings and set up the technical options (callback url for example).
+
+By default, when you run the app for the first time, it will create a basic configuration with the code `githubDemo-Default` and add it to your account.
 
 If you want to run the app with a custom SDKWEB configuration, you will have to add a new JSON file in the directory `middleware/configuration` and override the variable `CONFCODE` in your `.env.local` file with the code that has been provided in the new JSON file.
 The new JSON configuration will be automatically pushed to the SDKWEB API when the app will start.
 
 For more information, see the [idcheckio sdk-web documentation](https://sdkweb-test.idcheck.io/rest/api/index.html#_customerconf).
 
-## Scenario
+## Onboarding scenario
 
 By default, the app will create onboarding links that will ask the user to provide an ID document (ID card, passport), then do a liveness check.
 
@@ -29,6 +43,8 @@ If you want to create a new onboarding scenario, you will have to create a JSON 
 For more information, see the [idcheckio sdk-web documentation](https://sdkweb-test.idcheck.io/rest/api/index.html#_onboardingdefinition).
 
 ## Email configuration
+
+By default, the app will start the SDKWeb onboarding into an iframe.
 
 If you provide an email address as the value of the variable `CONTACT_EMAIL` in your `.env.local` file, an email will be sent to the provided email address containing the onboarding link.
 
@@ -49,9 +65,12 @@ These values can be override in the `.env.local` file.
 |ERROR_REDIRECT_URL| the user will be redirected to this url when an error occurs during the sdk-web scenario |false|
 |SUCCESS_REDIRECT_URL| the user will be redirected to this url at the end of the sdk-web scenario |false|
 
-## Available Scripts
+## Integration
 
-In the project directory, you can run:
+For futher integration support please refer to :
+    - [idcheckio sdk-web documentation](https://sdkweb-test.idcheck.io/rest/api/index.html)
+    - integration guide provided by your AriadNEXT contact.
+    - our support email below
 
 ### `npm start`
 
@@ -88,4 +107,4 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 
 ## Support
 
-Please contact [AriadNEXT support team](https://support.ariadnext.com/hc/en-us) if you encounter any issue with your idcheckio sdk-web integration.
+Please contact [AriadNEXT IDCHECKIO support team](contact+sdkwebexample@idcheck.io) if you encounter any issue with your idcheckio sdk-web integration.
