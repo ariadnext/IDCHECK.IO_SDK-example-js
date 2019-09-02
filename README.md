@@ -6,7 +6,7 @@ AriadNEXT IDCHECK.IO SDK Web enables you to easily integrate a document capture 
 identity verification workflow into your user onboarding or verification process, thanks to an
 API and a responsive web app.
 
-This project is an example of an integration of the [idcheckio sdkweb](https://www.idcheck.io/) in a React App to easily integrate a document capture and identification solution in your user acquisition path. 
+This project is an example of an integration of the [idcheckio sdkweb](https://www.idcheck.io/) in a React App to easily integrate a document capture and identification solution in your user acquisition path.
 
 ## Prerequisites
 
@@ -104,6 +104,13 @@ If you aren’t satisfied with the build tool and configuration choices, you can
 Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+
+## Troubleshooting
+
+**Note: "an ancestor violates the following Content Security Policy directive"
+
+  We are limiting iframe integration to <https://localhost:3000>.
+  To allow your domain please make a request to support Team.
 
 ## Support
 
