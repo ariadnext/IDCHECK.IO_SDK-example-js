@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Events</title>
+    <link rel="stylesheet" href="assets/index.css">
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+
+    <script src="https://sdkweb.idcheck.io/v2/assets/js/idcheckio-sdk.min.js"></script>
+    <script>
+        const idcheck = new IdCheckIo({
+            platform: 'DEMO',
+        });
+
+        idcheck.on('STARTED', () =>	console.log('The onboarding has been started. A client session has been initialized.'));
+        idcheck.on('DOCUMENT_CAPTURED', event =>	console.log('A document has been successfully captured.',event.document));
+        idcheck.on('NAVIGATION_WELCOME', () =>	console.log('The welcome page is being displayed.'));
+        idcheck.on('NAVIGATION_DOCUMENTS_LIST', () =>	console.log('The documents list is being displayed.'));
+        idcheck.on('NAVIGATION_LEGAL_MENTIONS', () =>	console.log('The legal mentions are being displayed.'));
+        idcheck.on('NAVIGATION_CAPTURE', () =>	console.log('The document capture page is being displayed.'));
+        idcheck.on('NAVIGATION_LIVENESS', () =>	console.log('The liveness page is being displayed.'));
+        idcheck.on('NAVIGATION_CAPTURE_HELP', () =>	console.log('The help page is being displayed.'));
+        idcheck.on('NAVIGATION_ANALYSIS', () =>	console.log('The document analysis page is being displayed.'));
+        idcheck.on('NAVIGATION_WAITING_ERROR', () =>	console.log('The page inviting the user to wait while handling an onboarding error is being displayed.'));
+        idcheck.on('NAVIGATION_WAITING_END', () =>	console.log('The page iniviting the user to wait while finishing to transmit data to the web API at the end of the onboarding is being displayed.'));
+        idcheck.on('NAVIGATION_END', () =>	console.log('The onboarding end page is being displayed.'));
+        idcheck.on('ENDED', () =>	console.log('The onboarding has successfully ended. All documents have been captured.'));
+        idcheck.on('ERROR', () =>	console.log('An error has occured. All documents could not have been captured.'));
+        idcheck.on('ACTIVITY', () =>	console.log('Non-blocking errors (ex: the user has provided an invalid document and is being asked to retry the capture).'));
+
+        fetch('/api/start')
+            .then(r => r.json())
+            .then(({uid}) => {
+              idcheck.init({ uid, element: '#root' });
+            })
+
+    </script>
+  </body>
+</html>
