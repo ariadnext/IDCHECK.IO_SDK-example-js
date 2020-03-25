@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- YOUR FONT -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap"
+      rel="stylesheet"
+    />
+    <title>Images</title>
+    <link rel="stylesheet" href="assets/index.css" />
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+
+    <script src="https://sdkweb.idcheck.io/v2/assets/js/idcheckio-sdk.min.js"></script>
+    <script>
+      const idcheck = new IdCheckIo({
+        platform: 'DEMO',
+        theme: {
+          pageTitle: {
+            width: '300px',
+            hideImagesBackground: true,
+          },
+          images: {
+            ID: 'https://img.icons8.com/clouds/2x/identification-documents.png',
+            // ANALYSIS: 'https://sdkweb-test.idcheck.io/v2/assets/images/analysis.png',
+            // ANALYSIS_FAILED: 'https://sdkweb-test.idcheck.io/v2/assets/images/analysis_ko.png',
+            // CAPTURE_HELPER_MRZ: 'https://sdkweb-test.idcheck.io/v2/assets/images/helper_mrz.png',
+            // CAPTURE_HELPER_STABILIZE: 'https://sdkweb-test.idcheck.io/v2/assets/images/helper_stabilize.png',
+            // CAPTURE_HELPER_LIGHT: 'https://sdkweb-test.idcheck.io/v2/assets/images/helper_light.png',
+            // CAPTURE_HELPER_BACKGROUND: 'https://sdkweb-test.idcheck.io/v2/assets/images/helper_background.png',
+            // CAPTURE_HELPER_FIT_FRAME: 'https://sdkweb-test.idcheck.io/v2/assets/images/helper_fit_frame.png',
+            // CAPTURE_HELPER_NO_HAND: 'https://sdkweb-test.idcheck.io/v2/assets/images/helper_hand.png',
+            // DOC_EURO: 'https://sdkweb-test.idcheck.io/v2/assets/images/doc_euro.png',
+            // DOC_HOUSE: 'https://sdkweb-test.idcheck.io/v2/assets/images/doc_house.png',
+            // DOC_PHOTO: 'https://sdkweb-test.idcheck.io/v2/assets/images/doc_photo.png',
+            // DOCUMENTS_TIMING: 'https://sdkweb-test.idcheck.io/v2/assets/images/documents_timing_banner.png',
+            // DOCUMENTS_UPLOADED: 'https://sdkweb-test.idcheck.io/v2/assets/images/documents_uploaded.png',
+            // FACE_OVERLAY: 'https://sdkweb-test.idcheck.io/v2/assets/images/face_overlay.svg',
+            // FRAME_OVERLAY: 'https://sdkweb-test.idcheck.io/v2/assets/images/frame_overlay.svg',
+            // HEALTH_CARD: 'https://sdkweb-test.idcheck.io/v2/assets/images/HC.svg',
+            // ICON_DO: 'https://sdkweb-test.idcheck.io/v2/assets/images/do.png',
+            // ICON_DONT: 'https://sdkweb-test.idcheck.io/v2/assets/images/dont.png',
+            // ID: 'https://sdkweb-test.idcheck.io/v2/assets/images/ID.svg',
+            // ID_VERSO: 'https://sdkweb-test.idcheck.io/v2/assets/images/IDVerso.svg',
+            // LEGAL_MENTIONS: 'https://sdkweb-test.idcheck.io/v2/assets/images/privacy_basis_gray.svg',
+            // LIVENESS: 'https://sdkweb-test.idcheck.io/v2/assets/images/liveness.svg',
+            // LOGO_ARIADNEXT: 'https://sdkweb-test.idcheck.io/v2/assets/images/logo_ariadnext.png',
+            // LOGO_ARIADNEXT_HORIZONTAL_BLACK: 'https://sdkweb-test.idcheck.io/v2/assets/images/logo_ariadnext_horizontal_black.png',
+            // NEXT: 'https://sdkweb-test.idcheck.io/v2/assets/images/next.png',
+            // SELFIE: 'https://sdkweb-test.idcheck.io/v2/assets/images/selfie.png',
+          },
+        },
+      });
+      fetch('/api/start')
+        .then(r => r.json())
+        .then(({ uid }) => {
+          idcheck.init({ uid, element: '#root' });
+        });
+    </script>
+  </body>
+</html>

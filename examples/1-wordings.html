@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Wording</title>
+    <link rel="stylesheet" href="assets/index.css" />
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+
+    <script src="https://sdkweb.idcheck.io/v2/assets/js/idcheckio-sdk.min.js"></script>
+    <script>
+      // You can set debug: true
+      // in order to retrieve wordings labels in HTML element in data-i18n attribute in text elements
+      // Then you can use wording object or a downloaded from json file
+      // const wordings = {
+      //   'default.doc.labels.id': 'Identity',
+      // }
+
+      // download wordings
+      let idcheck;
+      const parseJson = r => r.json();
+      fetch('assets/en.json')
+        .then(parseJson)
+        .then(wordings => {
+          idcheck = new IdCheckIo({
+            platform: 'DEMO',
+            wordings,
+            debug: true,
+          });
+        })
+        .then(() => fetch('/api/start'))
+        .then(parseJson)
+        .then(({ uid }) => {
+          idcheck.init({ uid, element: '#root' });
+        });
+    </script>
+  </body>
+</html>
