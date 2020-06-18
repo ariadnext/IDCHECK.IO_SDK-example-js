@@ -3,7 +3,8 @@
   "analysis.processing.title": "Processing document",
   "analysis.waiting.title": "Uploading document",
   "camera.capture.button.title": "Capture",
-  "camera.capture.retry.capture.button.title": "Cancel",
+  "camera.capture.document.helper.text": "Please make sure all 4 corners of your document are visible in the frame.",
+  "camera.capture.retry.capture.button.title": "Retry",
   "camera.capture.rotate.button.title": "Rotate",
   "camera.capture.selfie.helper.text": "Please make sure that your face is in the center of the frame.",
   "camera.capture.switch.camera.button.title": "Switch camera",
@@ -180,7 +181,11 @@
   "liveness.waiting.ready": "Start",
   "redirection.text": "Click on the link below to go back to your web form.",
   "waiting.subtext": "Please wait...",
+  "welcome.button.authenticate": "Authenticate",
   "welcome.button.start": "Begin",
+  "welcome.error.authenticate": "Your login is incorrect.",
+  "welcome.input.authenticate": "Insert your identification code",
+  "welcome.message.authenticate": "Authenticate to begin the documents capture",
   "welcome.message.default": "To complete your registration, please add the required documents.",
   "welcome.title.default": "Registration form"
 }
