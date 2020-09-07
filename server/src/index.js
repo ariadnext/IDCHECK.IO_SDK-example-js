@@ -72,17 +72,17 @@ module.exports = {
     return { ...data, fileUid, email: !!contactEmail };
   },
 
-  getResults: async fileUid => {
+  getResults: async (fileUid) => {
     await client.login(username, password, realm);
     const { data: reportData } = await client.getResults(realm, fileUid);
     const documents = await Promise.all(
-      reportData.documents.map(doc => {
+      reportData.documents.map((doc) => {
         return client.getDocument(realm, doc.uid);
       }),
     );
     return {
       report: reportData.lastReport,
-      documents: documents.map(doc => doc.data),
+      documents: documents.map((doc) => doc.data),
     };
   },
 
