@@ -21,20 +21,19 @@
 
       // download wordings
       let idcheck;
-      const parseJson = r => r.json();
+      const parseJson = (r) => r.json();
       fetch('assets/en.json')
         .then(parseJson)
-        .then(wordings => {
+        .then((wordings) => {
           idcheck = new IdCheckIo({
-            platform: 'DEMO',
             wordings,
             debug: true,
           });
         })
         .then(() => fetch('/api/start'))
         .then(parseJson)
-        .then(({ uid }) => {
-          idcheck.init({ uid, element: '#root' });
+        .then(({ url }) => {
+          idcheck.init({ url, element: '#root' });
         });
     </script>
   </body>

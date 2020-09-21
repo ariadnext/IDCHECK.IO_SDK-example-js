@@ -19,7 +19,6 @@
     <script>
       // A global fontFamily parameter will soon be available
       const idcheck = new IdCheckIo({
-        platform: 'DEMO',
         theme: {
           body: {
             fontFamily: "'Roboto Mono', monospace",
@@ -44,9 +43,9 @@
         },
       });
       fetch('/api/start')
-        .then(r => r.json())
-        .then(({ uid }) => {
-          idcheck.init({ uid, element: '#root' });
+        .then((r) => r.json())
+        .then(({ url }) => {
+          idcheck.init({ url, element: '#root' });
         });
     </script>
   </body>

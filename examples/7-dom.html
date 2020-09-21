@@ -12,13 +12,12 @@
     <script src="https://sdkweb.idcheck.io/v2/assets/js/idcheckio-sdk.min.js"></script>
     <script>
       const idcheck = new IdCheckIo({
-        platform: 'DEMO',
         mode: 'DOM',
       });
       fetch('/api/start')
-        .then(r => r.json())
-        .then(({ uid }) => {
-          idcheck.init({ uid, element: '#root' });
+        .then((r) => r.json())
+        .then(({ url }) => {
+          idcheck.init({ url, element: '#root' });
         });
     </script>
   </body>

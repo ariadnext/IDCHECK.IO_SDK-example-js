@@ -6,7 +6,6 @@ import AlertImage from './alert.svg';
 import './style.css';
 
 const idcheck = new IdCheckIo({
-  platform: 'DEMO',
   mode: 'DOM',
   forceMobileLayout: true,
 });
@@ -23,7 +22,7 @@ function Home() {
       .then(({ data }) => {
         setOnboarding(data);
       })
-      .catch(error => {
+      .catch((error) => {
         setError(error);
       });
   }, []);
@@ -31,7 +30,7 @@ function Home() {
   useEffect(() => {
     if (onboarding) {
       idcheck.init({
-        uid: onboarding.uid,
+        url: onboarding.url,
         element: idcheckRef.current, // Alternative: "#idcheck-component",
       });
     }
