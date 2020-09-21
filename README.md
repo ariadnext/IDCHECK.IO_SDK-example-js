@@ -20,8 +20,9 @@ Technically you will need :
 
 1. First, you will need to create a `.env` file in the root directory.
 2. Set your keycloak configuration by setting the values of the following environment variables in the `.env` file: `CIS_USERNAME`, `CIS_PASSWORD`, `CIS_REALM`.
-3. With [npm](https://npmjs.org/) installed, run the following command to start the app in the development mode : `npm start`
-4. Open [https://localhost:3000](https://localhost:3000) to view it in the browser.
+3. With [npm](https://npmjs.org/) installed, run `npm install` or `yarn install` to install dependencies
+4. Run the following command to start the app in the development mode : `npm start`
+5. Open [https://localhost:3000](https://localhost:3000) to view it in the browser.
 
 ## Examples
 
