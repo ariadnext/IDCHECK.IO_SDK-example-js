@@ -7,6 +7,7 @@
     "example": "examples"
   },
   "scripts": {
+    "postinstall": "cd client && npm install",
     "client": "cd client && npm start",
     "server": "node server/index.js",
     "start": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\""
@@ -18,13 +19,13 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "axios": "^0.19.2",
+    "axios": "^0.20.0",
     "body-parser": "^1.19.0",
     "dotenv": "^8.2.0",
     "express": "^4.17.1"
   },
   "devDependencies": {
-    "concurrently": "^5.1.0",
-    "nodemon": "^2.0.2"
+    "concurrently": "^5.3.0",
+    "nodemon": "^2.0.4"
   }
 }
