@@ -88,7 +88,7 @@
   "end.waiting.title": "Kończenie",
   "error.browser.unsupported.description": "Nieobsługiwana przeglądarka. Proszę, użyj innej lub innego urządzenia.",
   "error.browser.unsupported.title": "Nieobsługiwana przeglądarka",
-  "error.camera.access.denied.description": "Zabroniłeś dostępu do swojej kamery. Proszę, zmień ustawienia dostępu zgodnie z przewodnikiem: <a href=\"https://support.google.com/chrome/answer/2693767?hl=en\"></a>",
+  "error.camera.access.denied.description": "Zabroniłeś dostępu do swojej kamery. Nie możemy iść dalej ze względu na problem z urządzeniem lub usługą.",
   "error.camera.access.denied.title": "Brak dostępu do kamery",
   "error.camera.access.timeout.description": "Brak dostępu do Twojej kamery. Bez dostępu nie będzie możliwa weryfikacja tożsamości. Jeśli problem będzie się powtarzał, skorzystaj z innej przeglądarki lub urządzenia.",
   "error.camera.access.timeout.title": "Dostęp do kamery zabroniony",

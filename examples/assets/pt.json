@@ -88,7 +88,7 @@
   "end.waiting.title": "A finalizar",
   "error.browser.unsupported.description": "O seu browser não é suportado. Tente novamente com outro browser ou dispositivo.",
   "error.browser.unsupported.title": "Browser não suportado",
-  "error.camera.access.denied.description": "Negou o acesso à câmara. Altere estas permissões seguindo este <a href=\"https://support.google.com/chrome/answer/2693767?hl=en\">guia</a>",
+  "error.camera.access.denied.description": "Negou o acesso à câmara. Não podemos ir mais longe devido a um problema com o seu dispositivo ou serviço.",
   "error.camera.access.denied.title": "Acesso à câmara negado",
   "error.camera.access.timeout.description": "Não conseguimos aceder à sua câmara. Este passo é necessário para verificar a sua identidade. Se mesmo assim o problema ocorrer, tente com um browser ou dispositivo diferente.",
   "error.camera.access.timeout.title": "Acesso à câmara negado",

@@ -88,7 +88,7 @@
   "end.waiting.title": "Bezig met afronden",
   "error.browser.unsupported.description": "Uw browser wordt niet ondersteund. Probeer het opnieuw met een andere browser of een ander apparaat.",
   "error.browser.unsupported.title": "Niet-ondersteunde browser",
-  "error.camera.access.denied.description": "U hebt de toegang tot uw camera geweigerd. Wijzig deze toestemming volgens deze <a href=\"https://support.google.com/chrome/answer/2693767?hl=en\">gids</a>.",
+  "error.camera.access.denied.description": "U hebt de toegang tot uw camera geweigerd. We kunnen niet verder gaan vanwege een probleem met uw apparaat of service.",
   "error.camera.access.denied.title": "Toegang tot de camera geweigerd",
   "error.camera.access.timeout.description": "We hebben geen toegang tot uw camera. Deze stap is nodig om uw identiteit te verifiëren. Als het probleem zich nog steeds voordoet, overweeg dan om het met een andere browser of een ander apparaat te proberen.",
   "error.camera.access.timeout.title": "Toegang tot de camera geweigerd",

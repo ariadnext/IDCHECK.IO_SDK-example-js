@@ -88,7 +88,7 @@
   "end.waiting.title": "Finalizing",
   "error.browser.unsupported.description": "Your browser is not supported. Please try again with another browser or device.",
   "error.browser.unsupported.title": "Unsupported browser",
-  "error.camera.access.denied.description": "You denied access to your camera. Please change these permissions following this <a href=\"https://support.google.com/chrome/answer/2693767?hl=en\">guide</a>.",
+  "error.camera.access.denied.description": "You denied access to your camera. The onboarding cannot go further because of an issue with your device or the service.",
   "error.camera.access.denied.title": "Camera access denied",
   "error.camera.access.timeout.description": "We cannot access your camera. This step is required to verify your identity. If the problem still occurs, please consider trying with a different browser or device.",
   "error.camera.access.timeout.title": "Camera access denied",

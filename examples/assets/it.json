@@ -88,7 +88,7 @@
   "end.waiting.title": "Completamento",
   "error.browser.unsupported.description": "Il tuo browser non può essere utilizzato, contatta il tuo servizio clienti.",
   "error.browser.unsupported.title": "Browser non supportato",
-  "error.camera.access.denied.description": "Hai negato l'accesso alla macchina fotografica. Si prega di modificare queste autorizzazioni seguendo questa <a href=\"https://support.google.com/chrome/answer/2693767?hl=it\">guida</a>.",
+  "error.camera.access.denied.description": "Hai negato l'accesso alla macchina fotografica. Non possiamo andare oltre a causa di un problema con il vostro apparecchio o servizio.",
   "error.camera.access.denied.title": "Accesso webcam negato",
   "error.camera.access.timeout.description": "L'autorizzazione all'accesso alla telecamera è necessaria per verificare la vostra identità. Se il problema persiste, riprovare con un altro browser o dispositivo.",
   "error.camera.access.timeout.title": "Accesso telecamera negato",

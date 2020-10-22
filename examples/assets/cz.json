@@ -88,7 +88,7 @@
   "end.waiting.title": "Dokončení",
   "error.browser.unsupported.description": "Váš prohlížeč nelze použít.",
   "error.browser.unsupported.title": "Nepodporovaný prohlížeč.",
-  "error.camera.access.denied.description": "Zabránili jste přístupu ke kameře. Prosím změňte tato oprávnění následovně <a href=\"https://support.google.com/chrome/answer/2693767?hl=cs\">guide</a>",
+  "error.camera.access.denied.description": "Zabránili jste přístupu ke kameře. Nemůžeme jít dále kvůli problému s vaším zařízením nebo službou.",
   "error.camera.access.denied.title": "Přístup ke kameře byl zamítnut",
   "error.camera.access.timeout.description": "K ověření Vaší identity je nutné oprávnění k přístupu ke kameře. Pokud problém přetrvává, zkuste to znovu s jiným prohlížečem nebo zařízením.",
   "error.camera.access.timeout.title": "Přístup ke kameře byl zamítnut",
