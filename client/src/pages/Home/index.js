@@ -6,7 +6,6 @@ import AlertImage from './alert.svg';
 import './style.css';
 
 const idcheck = new IdCheckIo({
-  mode: 'DOM',
   forceMobileLayout: true,
 });
 idcheck.on('DOCUMENT_CAPTURED', () => console.log('Document captured'));
