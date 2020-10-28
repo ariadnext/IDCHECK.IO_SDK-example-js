@@ -26,8 +26,7 @@ module.exports = function(app) {
     }),
   );
   app.use(
-    '/wss-falcon',
-    proxy({
+    proxy('/wss-falcon', {
       target: 'wss://sdkweb-test.idcheck.io/wss-falcon',
       ws: true,
       changeOrigin: true,
