@@ -14,29 +14,29 @@
     <script>
       const idcheck = new IdCheckIo({
         theme: {
-          btnBgColor: 'white',
-          btnHoverBgColor: '#ccc',
-          btnTxtColor: '#666',
-          bodyBgColor: 'lightblue',
-          btnBorderRadius: '0px',
+          card: {
+            backgroundColor: '#fff',
+          },
           pageTitle: {
             hideImagesBackground: true,
           },
           body: {
-            backgroundColor: 'lightblue',
+            backgroundColor: '#eef3ff',
+            secondaryBackgroundColor: '#ddd', // change loading spinner, breadcrumb or liveness
           },
           typography: {
-            h1: {
+            title: {
               textColor: 'grey',
             },
-            body1: {
-              textColor: 'white',
+            description: {
+              textColor: 'grey',
             },
           },
           button: {
-            backgroundColor: 'white',
-            textColor: 'blue',
-            hoverColor: '#ccc',
+            backgroundColor: '#0000de',
+            textColor: '#fff',
+            hoverColor: '#0000D6',
+            borderRadius: '0px',
           },
         },
       });

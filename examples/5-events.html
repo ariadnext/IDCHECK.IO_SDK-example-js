@@ -14,6 +14,8 @@
     <script>
       const idcheck = new IdCheckIo();
 
+      // All events will send a previousStage object in the events
+      // for instance LEGAL_MENTIONS can be opened from almost pages
       idcheck.on('STARTED', () =>
         console.log(
           'The onboarding has been started. A client session has been initialized.',
@@ -25,54 +27,63 @@
           event.document,
         ),
       );
-      idcheck.on('NAVIGATION_WELCOME', () =>
-        console.log('The welcome page is being displayed.'),
+      idcheck.on('NAVIGATION_WELCOME', (event) =>
+        console.log('The welcome page is being displayed.', event),
       );
-      idcheck.on('NAVIGATION_DOCUMENTS_LIST', () =>
-        console.log('The documents list is being displayed.'),
+      idcheck.on('NAVIGATION_DOCUMENTS_LIST', (event) =>
+        console.log('The documents list is being displayed.', event),
       );
-      idcheck.on('NAVIGATION_LEGAL_MENTIONS', () =>
-        console.log('The legal mentions are being displayed.'),
+      idcheck.on('NAVIGATION_LEGAL_MENTIONS', (event) =>
+        console.log('The legal mentions are being displayed.', event),
       );
-      idcheck.on('NAVIGATION_CAPTURE', () =>
-        console.log('The document capture page is being displayed.'),
+      idcheck.on(
+        'NAVIGATION_CAPTURE',
+        (event) =>
+          console.log('The document capture page is being displayed.', event), // document and isOtherSide objects can be found in the event
       );
-      idcheck.on('NAVIGATION_LIVENESS', () =>
-        console.log('The liveness page is being displayed.'),
+      idcheck.on('NAVIGATION_LIVENESS', (event) =>
+        console.log('The liveness page is being displayed.', event),
       );
-      idcheck.on('NAVIGATION_CAPTURE_HELP', () =>
-        console.log('The help page is being displayed.'),
+      idcheck.on('NAVIGATION_CAPTURE_HELP', (event) =>
+        console.log('The help page is being displayed.', event),
       );
-      idcheck.on('NAVIGATION_ANALYSIS', () =>
-        console.log('The document analysis page is being displayed.'),
+      idcheck.on('NAVIGATION_ANALYSIS', (event) =>
+        console.log('The document analysis page is being displayed.', event),
       );
-      idcheck.on('NAVIGATION_WAITING_ERROR', () =>
+      idcheck.on('NAVIGATION_WAITING_ERROR', (event) =>
         console.log(
           'The page inviting the user to wait while handling an onboarding error is being displayed.',
+          event,
         ),
       );
-      idcheck.on('NAVIGATION_WAITING_END', () =>
+      idcheck.on('NAVIGATION_WAITING_END', (event) =>
         console.log(
           'The page iniviting the user to wait while finishing to transmit data to the web API at the end of the onboarding is being displayed.',
+          event,
         ),
       );
-      idcheck.on('NAVIGATION_END', () =>
-        console.log('The onboarding end page is being displayed.'),
+      idcheck.on('NAVIGATION_END', (event) =>
+        console.log('The onboarding end page is being displayed.', event),
       );
-      idcheck.on('ENDED', () =>
+      idcheck.on('ENDED', (event) =>
         console.log(
           'The onboarding has successfully ended. All documents have been captured.',
+          event,
         ),
       );
-      idcheck.on('ERROR', () =>
+      idcheck.on('ERROR', (event) =>
         console.log(
-          'An error has occured. All documents could not have been captured.',
+          'An error has occured. All documents could not have been captured. The link has been kill',
+          event,
         ),
       );
-      idcheck.on('ACTIVITY', () =>
-        console.log(
-          'Non-blocking errors (ex: the user has provided an invalid document and is being asked to retry the capture).',
-        ),
+      idcheck.on(
+        'ACTIVITY',
+        (event) =>
+          console.log(
+            'Non-blocking errors (ex: the user has provided an invalid document and is being asked to retry the capture).',
+            event,
+          ), // For error you can use event.activityCode to detect QUALITY errors...
       );
 
       fetch('/api/start')
