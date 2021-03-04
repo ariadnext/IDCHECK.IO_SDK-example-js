@@ -39,7 +39,6 @@ Change the last number in the url to switch between ID.
 | 4   | fonts   | Override default font (Your font need to be imported first)               |
 | 5   | events  | Subscribe to events                                                       |
 | 6   | layout  | Change layout (header, stepper or background)                             |
-| 7   | dom     | Use DOM integration instead of iframe                                     |
 
 ## SDKWEB configuration
 
