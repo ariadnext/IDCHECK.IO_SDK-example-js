@@ -3,11 +3,6 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <!-- YOUR FONT -->
-    <link
-      href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap"
-      rel="stylesheet"
-    />
     <title>Fonts</title>
     <link rel="stylesheet" href="assets/index.css" />
   </head>
@@ -21,7 +16,7 @@
       const idcheck = new IdCheckIo({
         theme: {
           body: {
-            fontFamily: "'Roboto Mono', monospace",
+            fontFamily: "'Roboto', monospace",
             fontSize: '12px',
           },
           button: {
@@ -35,6 +30,7 @@
               fontSize: '18px',
             },
           },
+          stylesheet: 'https://fonts.googleapis.com/css?family=Roboto',
         },
       });
       fetch('/api/start')
