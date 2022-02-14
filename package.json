@@ -1,6 +1,6 @@
 {
   "name": "idcheckio-sdkweb-example",
-  "version": "1.0.0",
+  "version": "3.3.4",
   "description": "![image](https://www.ariadnext.com/wp-content/uploads/2019/01/idcheck.io-rvb.png)",
   "main": "index.js",
   "directories": {
