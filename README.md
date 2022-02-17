@@ -30,15 +30,17 @@ A basic integration with several configurations is also available.
 Open [https://localhost:3000/examples/0](https://localhost:3000/examples/0) to view a basic configuration `examples/0-basic.html`
 Change the last number in the url to switch between ID.
 
-| ID  | Name    | Description                                                               |
-| :-- | :------ | :------------------------------------------------------------------------ |
-| 0   | basic   | Default configuration for DEMO platform                                   |
-| 1   | wording | Override wordings labels                                                  |
-| 2   | images  | Override images and document illustration area                            |
-| 3   | styles  | Override styles and theming (background text and button colors and shape) |
-| 4   | fonts   | Override default font (Your font need to be imported first)               |
-| 5   | events  | Subscribe to events                                                       |
-| 6   | layout  | Change layout (header, stepper or background)                             |
+| ID  | Name        | Description                                                               |
+| :-- | :---------- | :------------------------------------------------------------------------ |
+| 0   | basic       | Default configuration for DEMO platform                                   |
+| 1   | wording     | Override wordings labels                                                  |
+| 2   | images      | Override images and document illustration area                            |
+| 3   | styles      | Override styles and theming (background text and button colors and shape) |
+| 4   | fonts       | Override default font (Your font need to be imported first)               |
+| 5   | events      | Subscribe to events                                                       |
+| 6   | layout      | Change layout (header, stepper or background)                             |
+| 7   | skipPages   | Hide pages (welcome page, camera permission, documents list or end page)  |
+| 8   | displayMode | Use a simplified layout (Not applicable to legacy theme)                  |
 
 ## SDKWEB configuration
 
