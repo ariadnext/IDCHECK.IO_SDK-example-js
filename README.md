@@ -41,6 +41,7 @@ Change the last number in the url to switch between ID.
 | 6   | layout      | Change layout (header, stepper or background)                             |
 | 7   | skipPages   | Hide pages (welcome page, camera permission, documents list or end page)  |
 | 8   | displayMode | Use a simplified layout (Not applicable to legacy theme)                  |
+| 9   | animations  | Override images and document illustration with animated lottie files      |
 
 ## SDKWEB configuration
 
