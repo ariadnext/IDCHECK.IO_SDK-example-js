@@ -17,14 +17,18 @@
 
     <script src="https://sdkweb.idcheck.io/v2/assets/js/idcheckio-sdk.min.js"></script>
     <script>
+      /**
+       * HTTP header need to be set on json file AllowedOrigins * or with idcheck io url (ie: https://sdkweb-test.idcheck.io)
+       */
       const idcheck = new IdCheckIo({
         theme: {
-          pageTitle: {
-            width: '300px',
-            hideImagesBackground: true,
-          },
           images: {
-            ID: 'https://img.icons8.com/clouds/2x/identification-documents.png',
+            ID: 'https://idcio.s3.eu-west-3.amazonaws.com/id_front.json',
+            ID_VERSO: 'https://idcio.s3.eu-west-3.amazonaws.com/id_back.json',
+            CAMERA_PERMISSION:
+              'https://idcio.s3.eu-west-3.amazonaws.com/camera_blocked.json',
+            BIOMETRIC: 'https://idcio.s3.eu-west-3.amazonaws.com/selfie.json',
+            ERROR: 'https://idcio.s3.eu-west-3.amazonaws.com/id_failed.json',
             //   ANALYSIS: 'https://sdkweb-test.idcheck.io/v2/assets/images/analysis.png',
             //   ANALYSIS_FAILED: 'https://sdkweb-test.idcheck.io/v2/assets/images/fail.svg',
             //   CAPTURE_HELPER_MRZ: 'https://sdkweb-test.idcheck.io/v2/assets/images/helper_mrz.png',

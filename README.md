@@ -34,14 +34,13 @@ Change the last number in the url to switch between ID.
 | :-- | :---------- | :------------------------------------------------------------------------ |
 | 0   | basic       | Default configuration for DEMO platform                                   |
 | 1   | wording     | Override wordings labels                                                  |
-| 2   | images      | Override images and document illustration area                            |
+| 2   | images      | Override images and document illustrations                                |
 | 3   | styles      | Override styles and theming (background text and button colors and shape) |
 | 4   | fonts       | Override default font (Your font need to be imported first)               |
 | 5   | events      | Subscribe to events                                                       |
-| 6   | layout      | Change layout (header, stepper or background)                             |
+| 6   | layout      | Change layout (ex: header)                                                |
 | 7   | skipPages   | Hide pages (welcome page, camera permission, documents list or end page)  |
-| 8   | displayMode | Use a simplified layout (Not applicable to legacy theme)                  |
-| 9   | animations  | Override images and document illustration with animated lottie files      |
+| 8   | animations  | Override images and document illustrations with animated lottie files     |
 
 ## SDKWEB configuration
 
